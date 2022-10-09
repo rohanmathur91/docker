@@ -1,8 +1,10 @@
 # build stage
 FROM node:latest AS builder
 WORKDIR /app
+COPY package-lock.json package.json ./
+RUN npm ci
 COPY . .
-RUN npm ci && npm run build
+RUN npm run build
 
 # runtime stage
 FROM nginx:1.17
