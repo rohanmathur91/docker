@@ -5,7 +5,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - .:/home/node/code # bind mount
+      - .:/home/node/code # bind mount, this is workdir
 
       # this will create a empty volume which is nothing but
       # ignoring the node_modules for current service
