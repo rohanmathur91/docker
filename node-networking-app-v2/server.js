@@ -10,13 +10,14 @@ app.use("/", async (req, res) => {
   try {
     await fs.appendFile(
       "./data.txt",
-      `\n😎 hehe, Logging into to data.txt:${i++}`
+      `\n${new Date().getTime()}: Logging into to data.txt: ${i++} 😎`
     );
+
     res.json({ message: "running" });
   } catch (error) {
     await fs.appendFile(
       "./data.txt",
-      `\n😶 Error occured while appending into to data.txt:${i++}`
+      `\n${new Date().getTime()}: Error occured while appending into to data.txt: ${i++} 😶`
     );
   }
 });
